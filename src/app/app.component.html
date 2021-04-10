@@ -1,4 +1,32 @@
-<div
-style="background-color: #3a68bd;
-color: #ffffff;">
-Hello Ghassen</div>
+<nav class="navbar navbar-expand-sm bg-success navbar-dark">
+  <a class="navbar-brand" href="#">
+    Ghassen Khalouaoui Website
+  </a>
+  <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#mynav">
+    <span class="navbar-toggle-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="mynav">
+    <ul class="navbar-nav mr-auto">
+      <li class="navbar-item">
+        <a class="nav-link" routerLink="dashboard">Dashboard</a>
+      </li>
+      <li class="navbar-item">
+        <a class="nav-link" routerLink="about">About</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="search"><i class="fa fa-search"></i></span>
+        </div>
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <button class="btn btn-warning my2- my-sm-0" type="button">Search</button>
+    </form>
+  </div>
+
+</nav>
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>
+
