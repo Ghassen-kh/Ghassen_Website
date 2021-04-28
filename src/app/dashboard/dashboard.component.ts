@@ -12,8 +12,8 @@ export class DashboardComponent implements OnInit {
   Linkedin: string;
   Github: string;
   Mail: string;
-  Adress:string;
-  Skype:string;
+  Adress: string;
+  Skype: string;
   ProjectName: string;
   ProjectDate: string;
   ProjectPlace: string;
@@ -21,24 +21,24 @@ export class DashboardComponent implements OnInit {
   Languages: string[];
   Projects: string[];
   Years: number[] = [];
-  Skills : any = [];
-  TeamMembers :any = [];
-  ToDay:Date;
+  Skills: any = [];
+  TeamMembers: any = [];
+  ToDay: Date;
 
   ngOnInit() {
     this.Designation = 'Instrumentation and intelligent systems engineer';
     this.Username = 'Ghassen Khalouaoui';
-    this.PhoneNumber = "(+216) 96626522";
-    this.Linkedin = "linkedin.com/in/ghassen-khalouaoui";
-    this.Github = "github.com/Ghassen-kh";
-    this.Mail = "ghassen.khalouaoui15@gmail.com";
-    this.Adress = "Sidi Thabet , Ariana, Tunisie";
-    this.Skype="live:.cid.ebe9c8af118484e8";
-    this.ProjectName = "Non-cooperative 3D face recognition in uncontrolled environment";
-    this.ProjectDate = "From 02/2020 to 12/2020";
-    this.ProjectPlace = "Tunis";
-    this.ToDay=new Date();
-    
+    this.PhoneNumber = '(+216) 96626522';
+    this.Linkedin = 'linkedin.com/in/ghassen-khalouaoui';
+    this.Github = 'github.com/Ghassen-kh';
+    this.Mail = 'ghassen.khalouaoui15@gmail.com';
+    this.Adress = 'Sidi Thabet , Ariana, Tunisie';
+    this.Skype = 'live:.cid.ebe9c8af118484e8';
+    this.ProjectName = 'Non-cooperative 3D face recognition in uncontrolled environment';
+    this.ProjectDate = 'From 02/2020 to 12/2020';
+    this.ProjectPlace = 'Tunis';
+    this.ToDay = new Date();
+
 
     this.Languages = [
       'Arabic',
@@ -49,7 +49,7 @@ export class DashboardComponent implements OnInit {
 
     this.Projects = ['Project A', 'Project B', 'Project C', 'Project D'];
 
-    for (var i = 2019; i >= 2010; i--) {
+    for (let i = 2019; i >= 2010; i--) {
       this.Years.push(i);
     }
 
@@ -57,22 +57,22 @@ export class DashboardComponent implements OnInit {
       {
         Name: 'C',
         Experience: 4,
-        Level: "8/10",
+        Level: '8/10',
       },
       {
         Name: 'C++',
         Experience: 4,
-        Level: "7/10",
+        Level: '7/10',
       },
       {
         Name: 'Java',
         Experience: 3,
-        Level: "6/10",
+        Level: '6/10',
       },
       {
         Name: 'Python',
         Experience: 1,
-        Level: "5/10",
+        Level: '5/10',
       },
     ];
 
@@ -133,29 +133,29 @@ export class DashboardComponent implements OnInit {
       },
     ];
   }
-  onProjectChange($event:any){
-    if($event.target.innerHTML=="Project A"){
-      this.ProjectName="Non-cooperative 3D face recognition in uncontrolled environment";
-      this.ProjectDate="From 02/2020 to 12/2020";
-      this.ProjectPlace="Tunis";
+  onProjectChange($event: any){
+    if ($event.target.innerHTML == 'Project A'){
+      this.ProjectName = 'Non-cooperative 3D face recognition in uncontrolled environment';
+      this.ProjectDate = 'From 02/2020 to 12/2020';
+      this.ProjectPlace = 'Tunis';
     }
     else
-     if($event.target.innerHTML=="Project B"){
-      this.ProjectName="Angular project ";
-      this.ProjectDate="From 03/2021 to 04/2021";
-      this.ProjectPlace="Tunis";
+     if ($event.target.innerHTML == 'Project B'){
+      this.ProjectName = 'Angular project ';
+      this.ProjectDate = 'From 03/2021 to 04/2021';
+      this.ProjectPlace = 'Tunis';
     }
     else
-    if($event.target.innerHTML=="Project C"){
-     this.ProjectName="javaFX project";
-     this.ProjectDate="From 02/2021 to 03/2021";
-     this.ProjectPlace="Tunis";
+    if ($event.target.innerHTML == 'Project C'){
+     this.ProjectName = 'javaFX project';
+     this.ProjectDate = 'From 02/2021 to 03/2021';
+     this.ProjectPlace = 'Tunis';
    }
    else
-   if($event.target.innerHTML=="Project D"){
-    this.ProjectName="embedded systems project";
-    this.ProjectDate="From 03/2019 to 09/2019";
-    this.ProjectPlace="INSAT";
+   if ($event.target.innerHTML == 'Project D'){
+    this.ProjectName = 'embedded systems project';
+    this.ProjectDate = 'From 03/2019 to 09/2019';
+    this.ProjectPlace = 'INSAT';
   }
   }
 }
