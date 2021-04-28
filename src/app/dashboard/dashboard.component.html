@@ -255,9 +255,9 @@
                 <ng-template #firstTemplate>
                   <div class="card" *ngFor="let teamMember of teamMembersGroup.Members">
                     <div class="card-header bg-primary text-white">
-                      #{{teamMember.ID}}{{teamMember.Name}}
+                      #{{teamMember.ID}}{{teamMember.Skill}}
                     </div>
-                    <div class="card-body">{{teamMember.Status}}
+                    <div class="card-body">{{teamMember.Level1}}
                     </div>
                   </div>
                 </ng-template>
@@ -266,15 +266,15 @@
                     <thead>
                       <tr>
                         <th>ID</th>
-                        <th>Name</th>
-                        <th>Status</th>
+                        <th>Skill</th>
+                        <th>Level</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr *ngFor="let member of teamMembersGroup.Members">
                         <td>{{ member.ID }}</td>
-                        <td [style.color]="(member.Status=='Busy')? 'red': 'black'">{{ member.Name }}</td>
-                        <td>{{ member.Status }}</td>
+                        <td [style.color]="(member.Level1=='Average')? 'red': 'black'">{{ member.Skill }}</td>
+                        <td>{{ member.Level1 }}</td>
                       </tr>
                     </tbody>
                   </table>
