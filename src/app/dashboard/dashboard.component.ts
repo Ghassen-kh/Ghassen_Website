@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'dashboard',
@@ -18,17 +18,18 @@ export class DashboardComponent implements OnInit {
   ProjectDate: string;
   ProjectPlace: string;
 
-  Languages: string[];
+  Languages: any = [];
   Projects: string[];
   Years: number[] = [];
   Skills: any = [];
   TeamMembers: any = [];
   ToDay: Date;
+  @Output() y: string;
 
   ngOnInit() {
     this.Designation = 'Instrumentation and intelligent systems engineer';
     this.Username = 'Ghassen Khalouaoui';
-    this.PhoneNumber = '(+216) 96626522';
+    this.PhoneNumber = '(+216) 23.107.168';
     this.Linkedin = 'linkedin.com/in/ghassen-khalouaoui';
     this.Github = 'github.com/Ghassen-kh';
     this.Mail = 'ghassen.khalouaoui15@gmail.com';
@@ -41,119 +42,170 @@ export class DashboardComponent implements OnInit {
 
 
     this.Languages = [
-      'Arabic',
-      'English',
-      'Frensh',
-      'German'
-    ];
+    {
+      name : 'Arabic',
+      experience: '100'
+    },
+    {
+      name : 'English',
+      experience: '75'
+    },
+    {
+      name : 'Frensh',
+      experience: '70'
+    },
+    {
+      name : 'German',
+      experience: '10'
+    }
+  ];
 
-    this.Projects = ['Project A', 'Project B', 'Project C', 'Project D'];
+    this.Projects = ['End of Study Internship', 'Angular project', 'javaFX project', 'Embedded systems project'];
 
-    for (let i = 2019; i >= 2010; i--) {
+    for (let i = 2021; i >= 2010; i--) {
       this.Years.push(i);
     }
 
     this.Skills = [
       {
-        Name: 'C',
-        Experience: 4,
-        Level: '8/10',
+        Name: 'Angular',
+        Level: '70%',
       },
       {
-        Name: 'C++',
-        Experience: 4,
-        Level: '7/10',
+        Name: 'TypeScript',
+        Level: '70%',
       },
       {
         Name: 'Java',
-        Experience: 3,
-        Level: '6/10',
+        Level: '60%',
       },
       {
         Name: 'Python',
-        Experience: 1,
-        Level: '5/10',
+        Level: '50%',
+      },
+      {
+        Name: 'C',
+        Level: '80%',
+      },
+      {
+        Name: 'C++',
+        Level: '80%',
+      },
+      {
+        Name: 'HTML5',
+        Level: '80%',
+      },
+      {
+        Name: 'CSS3',
+        Level: '50%',
+      },
+      {
+        Name: 'MySQL',
+        Level: '60%',
       },
     ];
 
     this.TeamMembers = [
       {
-        Region: 'Modern C++ multithreading',
+        id: 'modern',
+        Name: 'Modern C++ multithreading',
+        Url: 'assets/c++.jpg',
         Members: [
-          { ID: 1, Skill: 'Skill1', Level1: 'Good' },
-          { ID: 2, Skill: 'Skill2', Level1: 'Good' },
-          { ID: 3, Skill: 'Skill3', Level1: 'Average' },
-          { ID: 4, Skill: 'Skill4', Level1: 'Average' },
+          { Skill: 'Skill1', Level1: 'Good' },
+          { Skill: 'Skill2', Level1: 'Good' },
+          { Skill: 'Skill3', Level1: 'Average' },
+          { Skill: 'Skill4', Level1: 'Average' },
         ],
       },
       {
-        Region: 'Computer Vision (OpenCV & Python)',
+        id: 'docker',
+        Name: 'Docker Essentials & Building a Containerized Web Application',
+        Url: 'assets/docker.jpg',
         Members: [
-          { ID: 5, Skill: 'Skill1', Level1: 'Good' },
-          { ID: 6, Skill: 'Skill2', Level1: 'Good' },
-          { ID: 7, Skill: 'Skill3', Level1: 'Average' },
-          { ID: 8, Skill: 'Skill4', Level1: 'Average' },
+          { Skill: 'Skill1', Level1: 'Good' },
+          { Skill: 'Skill2', Level1: 'Good' },
+          { Skill: 'Skill3', Level1: 'Average' },
+          { Skill: 'Skill4', Level1: 'Average' },
         ],
       },
       {
-        Region: 'HTML, CSS and Javascript for Web Developers (JOHNS HOPKINS university)',
+        id: 'computer',
+        Name: 'Computer Vision (OpenCV & Python)',
+        Url: 'assets/computer_vision.jpg',
         Members: [
-          { ID: 9, Skill: 'Skill1', Level1: 'Good' },
-          { ID: 10, Skill: 'Skill2', Level1: 'Good' },
-          { ID: 11, Skill: 'Skill3', Level1: 'Average' },
-          { ID: 12, Skill: 'Skill4', Level1: 'Average' },
+          { Skill: 'Skill1', Level1: 'Good' },
+          { Skill: 'Skill2', Level1: 'Good' },
+          { Skill: 'Skill3', Level1: 'Average' },
+          { Skill: 'Skill4', Level1: 'Average' },
         ],
       },
       {
-        Region: 'Agile Scrum (Advancia)',
+        id: 'html',
+        Name: 'HTML, CSS and Javascript for Web Developers (JOHNS HOPKINS university)',
+        Url: 'assets/web.jpg',
         Members: [
-          { ID: 13, Skill: 'Skill1', Level1: 'Good' },
-          { ID: 14, Skill: 'Skill2', Level1: 'Good' },
-          { ID: 15, Skill: 'Skill3', Level1: 'Average' },
-          { ID: 16, Skill: 'Skill4', Level1: 'Average' },
+          { Skill: 'Skill1', Level1: 'Good' },
+          { Skill: 'Skill2', Level1: 'Good' },
+          { Skill: 'Skill3', Level1: 'Average' },
+          { Skill: 'Skill4', Level1: 'Average' },
         ],
       },
       {
-        Region: 'Upper intermediate 3 General English level (British Council Tunis)',
+        id: 'agile',
+        Name: 'Agile Scrum (Advancia)',
+        Url: 'assets/agile.jpg',
         Members: [
-          { ID: 13, Skill: 'Skill1', Level1: 'Good' },
-          { ID: 14, Skill: 'Skill2', Level1: 'Good' },
-          { ID: 15, Skill: 'Skill3', Level1: 'Average' },
-          { ID: 16, Skill: 'Skill4', Level1: 'Average' },
+          { Skill: 'Skill1', Level1: 'Good' },
+          { Skill: 'Skill2', Level1: 'Good' },
+          { Skill: 'Skill3', Level1: 'Average' },
+          { Skill: 'Skill4', Level1: 'Average' },
         ],
       },
       {
-        Region: 'Practitioner in Neurolinguistic Programming (Psynapse)',
+        id: 'english',
+        Name: 'Upper intermediate 3 General English level (British Council Tunis)',
+        Url: 'assets/english.jpg',
         Members: [
-          { ID: 13, Skill: 'Skill1', Level1: 'Good' },
-          { ID: 14, Skill: 'Skill2', Level1: 'Good' },
-          { ID: 15, Skill: 'Skill3', Level1: 'Average' },
-          { ID: 16, Skill: 'Skill4', Level1: 'Average' },
+          { Skill: 'Skill1', Level1: 'Good' },
+          { Skill: 'Skill2', Level1: 'Good' },
+          { Skill: 'Skill3', Level1: 'Average' },
+          { Skill: 'Skill4', Level1: 'Average' },
+        ],
+      },
+      {
+        id: 'pnl',
+        Name: 'Practitioner in Neurolinguistic Programming (Psynapse)',
+        Url: 'assets/pnl.jpg',
+        Members: [
+          { Skill: 'Skill1', Level1: 'Good' },
+          { Skill: 'Skill2', Level1: 'Good' },
+          { Skill: 'Skill3', Level1: 'Average' },
+          { Skill: 'Skill4', Level1: 'Average' },
         ],
       },
     ];
   }
   onProjectChange($event: any){
-    if ($event.target.innerHTML == 'Project A'){
+    if ($event.target.innerHTML == 'End of Study Internship'){
       this.ProjectName = 'Non-cooperative 3D face recognition in uncontrolled environment';
       this.ProjectDate = 'From 02/2020 to 12/2020';
       this.ProjectPlace = 'Tunis';
     }
     else
-     if ($event.target.innerHTML == 'Project B'){
+     if ($event.target.innerHTML == 'Angular project'){
       this.ProjectName = 'Angular project ';
-      this.ProjectDate = 'From 03/2021 to 04/2021';
+      this.ProjectDate = 'From 04/2021 to 05/2021';
       this.ProjectPlace = 'Tunis';
     }
     else
-    if ($event.target.innerHTML == 'Project C'){
+    if ($event.target.innerHTML == 'javaFX project'){
      this.ProjectName = 'javaFX project';
      this.ProjectDate = 'From 02/2021 to 03/2021';
      this.ProjectPlace = 'Tunis';
    }
    else
-   if ($event.target.innerHTML == 'Project D'){
-    this.ProjectName = 'embedded systems project';
+   if ($event.target.innerHTML == 'Embedded systems project'){
+    this.ProjectName = 'Embedded systems project';
     this.ProjectDate = 'From 03/2019 to 09/2019';
     this.ProjectPlace = 'INSAT';
   }
